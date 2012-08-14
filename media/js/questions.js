@@ -182,13 +182,13 @@
         if(!container) {
             return;
         }
-        var crashIDRegex = new RegExp("(bp-)?([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})", "g");
+        var crashIDRegex = new RegExp("(bp-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})", "g");
         var crashStatsBase = "https://crash-stats.mozilla.com/report/index/";
         var helpingWithCrashesArticle = "/kb/helping-crashes";
         var iconPath = "/media/img/questions/icon.questionmark.png";
         var crashReportContainer =
             "<span class='crash-report'>" +
-            "<a href='" + crashStatsBase + "$2' target='_blank'>$2</a>" +
+            "<a href='" + crashStatsBase + "$1' target='_blank'>$1</a>" +
             "<a href='" + helpingWithCrashesArticle + "' target='_blank'>" +
             "<img src='" + iconPath + "'></img></a></span>";
 
